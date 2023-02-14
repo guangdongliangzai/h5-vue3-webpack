@@ -3,7 +3,7 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 const Timestamp = new Date().getTime();
-// const AutoImport = require("unplugin-auto-import/webpack");
+const AutoImport = require("unplugin-auto-import/webpack");
 // const Components = require("unplugin-vue-components/webpack");
 // const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
 
@@ -13,14 +13,19 @@ module.exports = {
   productionSourceMap: false,
   configureWebpack: {
     // webpack 配置
-    // plugins: [
-    //   AutoImport({
-    //     resolvers: [ElementPlusResolver()],
-    //   }),
-    //   Components({
-    //     resolvers: [ElementPlusResolver()],
-    //   }),
-    // ],
+    plugins: [
+      AutoImport({
+        imports: ['vue', 'vue-router', 'vuex'],
+        eslintrc: {
+          enabled: false, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
+          filepath: './.eslintrc-auto-import.json', // 生成json文件,eslintrc中引入
+          globalsPropValue: true,
+        },
+      }),
+      // Components({
+      //   resolvers: [ElementPlusResolver()],
+      // }),
+    ],
     output: {
       // 输出重构  打包编译后的 文件名称  【模块名称.版本号.时间戳】
       filename: `js/[name].${process.env.VUE_APP_Version}.${Timestamp}.js`,

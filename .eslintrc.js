@@ -5,7 +5,8 @@ module.exports = {
   },
   'extends': [
     'plugin:vue/vue3-essential',
-    'eslint:recommended'
+    'eslint:recommended',
+    './.eslintrc-auto-import.json'//vue自动导入忽略
   ],
   parserOptions: {
     parser: 'babel-eslint'
