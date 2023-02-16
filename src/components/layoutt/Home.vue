@@ -1,6 +1,6 @@
 <template>
-  <div class="huiyang_content">
-    <router-view
+  <div class="layoutt_content">
+    <!-- <router-view
       v-slot="{ Component }"
       v-if="$route.meta.keepAlive"
       v-wechat-title="title"
@@ -9,15 +9,21 @@
         <component :is="Component" />
       </keep-alive>
     </router-view>
-    <router-view v-slot="{ Component }" v-else v-wechat-title="title">
+    <router-view v-slot="{ Component }" v-else>
       <keep-alive>
         <component :is="Component" />
       </keep-alive>
+    </router-view> -->
+    <router-view v-slot="{ Component }" v-wechat-title="title">
+      <keep-alive>
+        <component :is="Component" :key="$route.name" v-if="$route.meta.keepAlive" />
+      </keep-alive>
+      <component :is="Component" :key="$route.name" v-if="!$route.meta.keepAlive" />
     </router-view>
   </div>
 </template>
 <style lang="less" scoped>
-.huiyang_content {
+.layoutt_content {
   width: 375px;
   height: 100vh;
   overflow: auto;
