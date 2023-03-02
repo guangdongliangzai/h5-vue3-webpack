@@ -16,7 +16,7 @@
         "postcss-plugin-px2rem": "^0.8.1",
         "qs": "^6.11.0",
         "vant": "^3.4.9",
-        "vue": "^3.0.0",
+        "vue": "^3.2.47",
         "vue-router": "^4.0.0-0",
         "vue-wechat-title": "^2.0.7",
         "vuex": "^4.0.0-0"

@@ -12,5 +12,15 @@ export default {
             }
         })
 
+        const requireComponent_js = require.context('./module', true, /\.js$/)
+        requireComponent_js.keys().forEach(fileName => {
+            const componentConfig = requireComponent_js(fileName)
+            const componentName = componentConfig.default.name
+            if (componentName) {
+                Vue.component(componentName, componentConfig.default)
+            }
+        })
+
+
     }
 }

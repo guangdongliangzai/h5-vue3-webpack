@@ -13,10 +13,11 @@
       <p>使用vuex</p>
       <p>{{ myGetters_value }}</p>
     </div>
+    <dynamic-heading :dar="'攻城师'" />
   </div>
 </template>
 <script>
-import { ref, onMounted, provide, reactive, readonly, computed, shallowRef } from "vue";
+// import { ref, onMounted, provide, reactive, readonly, computed, shallowRef } from "vue";
 import { mapGetters, mapActions, mapMutations } from "vuex";
 export default {
   setup() {

@@ -2,7 +2,7 @@ const ItemRoutes = [
 
     {
         //  选择地址
-        path: "default/mapSelect",
+        path: "mapSelect",
         name: "DefaultMapSelect",
         meta: { keepAlive: true, login: false, title: "选择地址" },
         component: () => import("@/views/default/mapSelect.vue"),

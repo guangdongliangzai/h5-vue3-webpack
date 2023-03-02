@@ -8,8 +8,7 @@ const routes = [
     redirect: "/404",
   },
   {
-    path: "/defaultRouter",
-    redirect: "/defaultRouter/index",
+    path: "/default",
     meta: { login: true },
     component: () =>
       import(/* webpackChunkName: "defaultRouter" */ "@/components/layoutt/Home.vue"),
@@ -17,7 +16,6 @@ const routes = [
   },
   {
     path: "/activity",
-    redirect: "/404",
     component: () =>
       import(/* webpackChunkName: "activity" */ "@/components/layoutt/Home.vue"),
     children: activity,

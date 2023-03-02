@@ -17,7 +17,7 @@ module.exports = {
       AutoImport({
         imports: ['vue', 'vue-router', 'vuex'],
         eslintrc: {
-          enabled: false, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
+          enabled: true, // 默认false, true启用。生成一次就可以，避免每次工程启动都生成
           filepath: './.eslintrc-auto-import.json', // 生成json文件,eslintrc中引入
           globalsPropValue: true,
         },
