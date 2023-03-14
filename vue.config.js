@@ -6,7 +6,8 @@ const Timestamp = new Date().getTime();
 const AutoImport = require("unplugin-auto-import/webpack");
 // const Components = require("unplugin-vue-components/webpack");
 // const { ElementPlusResolver } = require("unplugin-vue-components/resolvers");
-
+const chalk = require('chalk')
+const ProgressBarPlugin = require('progress-bar-webpack-plugin')
 module.exports = {
   publicPath: "/",
   // assetsDir: "static",
@@ -21,6 +22,10 @@ module.exports = {
           filepath: './.eslintrc-auto-import.json', // 生成json文件,eslintrc中引入
           globalsPropValue: true,
         },
+      }),
+      // 进度条
+      new ProgressBarPlugin({
+        format: `  :msg [:bar] ${chalk.green.bold(':percent')} (:elapsed s)`
       }),
       // Components({
       //   resolvers: [ElementPlusResolver()],
@@ -39,6 +44,7 @@ module.exports = {
           javascriptEnabled: true
         },
         plugins: [
+
           require("autoprefixer")({
             overrideBrowserslist: ["Android >= 4.0", "iOS >= 7"],
           }),

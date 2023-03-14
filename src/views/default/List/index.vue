@@ -2,6 +2,7 @@
   <div class="scanningDiscount">
     <ListPage :myClass="'huiyang_coupon'" @scrollBottom="nextPage" :showBTN="showBTN">
       列表里边的东西
+      <DateSelect />
     </ListPage>
   </div>
 </template>

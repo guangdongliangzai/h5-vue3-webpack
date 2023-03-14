@@ -10,8 +10,8 @@ const ItemRoutes = [
     {
         // 排行榜
         path: "rankingList",
-        name: "rankingList",
-        meta: { title: "" },
+        name: "RankingList",
+        meta: { keepAlive: true, login: false, title: " " },
         component: () => import("@/views/default/List/index.vue"),
     },
 
